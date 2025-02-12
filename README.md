@@ -9,7 +9,7 @@ This repository contains the files for the **http5121** project, which is part o
 You can access the repository's code and updates on GitHub: [GitHub Link](https://github.com/RaginiS19/http5121)
 
 ## Image
-![Web Design](images/web%20design.jpeg.png)
+![Web Design](images/web%20design.jpeg)
 
 ## Notes
 - This repository contains exercises that demonstrate basic front-end development skills.
