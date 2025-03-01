@@ -1,0 +1,87 @@
+/*
+  There are three main types of selectors:
+  - element (select elements by tag name)
+  - #id-name (select an element by id name)
+  - .class-name (select elements by class name)
+*/
+body {
+  /* font-size:1em; */ /* em is a multiplier. Multiply this element's inherited default font size by the number before the em unit. */
+  /* line-height: 1.25; */
+  /* The last font in a font stack should always be the generic font type (e.g. serif, sans-serif, decorative). */
+  /* font-family:Arial, Helvetica, sans-serif; */
+  font:normal 1em/1.25 Arial,Helvetica,sans-serif;
+  margin:0;
+}
+h1 {
+  font-style:italic;
+}
+h1, h2, h3, h4 {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/* A pseudo-class (:pseudoclass) allows you to select an element in a particular state (e.g. on hover). */
+/*
+  LINK-RELATED PSEUDO-CLASSES
+  - :link (a href="<url>")
+  - :visited (will apply for links whose href has already been visited)
+  - :hover (something being hovered over)
+  - :active (currently on mousedown but before mouseup)
+*/
+a:link, a:visited {
+  color:red;
+}
+/* a:visited {
+  color:coral;
+} */
+a:hover {
+  color:#000;
+}
+a:active {
+  color:green;
+}
+
+#header, #footer {
+  background-color:#dfd7cd;
+  padding:1em;
+}
+/* The below selector will select an element with id="site-name". */
+#site-name {
+  font-weight:normal;
+  letter-spacing:5px; /* adjust spacing (kerning) between characters of text */
+  margin-top:0;
+}
+.menu {
+  padding:0; /* 0 padding all around */
+  margin-bottom:0;
+}
+.menu li {
+  display:inline;
+  margin-right:2em;
+}
+/* The below selector is selecting all a elements which are descendants of an element with class="menu". */
+.menu a  {
+  text-decoration:none;
+}
+
+#sidebar {
+  font-size:0.8em;
+}
+#copyright {
+  margin-bottom:0;
+  font-size:0.8em;
+  border-top:1px solid red; /* border: <border-width> <border-style> <border-color> */
+  padding-top:0.5em;
+}
+a.button, .button {
+  background-color:#000;
+  color:#fff; /* white is #fff or #ffffff */
+  padding: 0.5em 0.8em;
+  text-decoration:none;
+  border-radius:0.5em;
+  display:inline-block;
+  text-align:center;
+  border:none;
+  font-family:inherit;
+}
+.small {
+  font-size:0.9em;
+}

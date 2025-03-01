@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <h1>HTML Forms</h1>
+    <!-- All stuff that belongs to forms - including submit buttons - go inside a FORM element. -->
+    <!-- 
+      There is a method attribute (GET by default). This sets how form
+      data will be submitted.
+      
+      - "get": GET forms (the default if the method attribute is not set) submit the data 
+               via the URL. This is usually used for simple search
+               forms where it doesn't matter if the data is visible in the URL. Searches are
+               not secure data so this doesn't matter. It's also useful to be able to bookmark
+               a search page. Since GET forms pass data via the URL, there is a character limit on
+               GET form data.
+      - "post": POST forms do NOT submit via the URL, so this is inherently more secure (i.e. the
+                data is not immediately exposed). Most forms should use POST as the submission
+                method. Wherever there is more sensitive data, use POST (e.g. a login form or 
+                checkout form).
+    -->
+    <!--
+      There is an action attribute. This value is the destination (URI/URL) where the form data
+      will be submitted to. As we're not doing any server-side form processing in this class, you
+      can omit this attribute for this class, but it's important to know about this attribute.
+    -->
+    <h2>Search form example</h2>
+    <form method="get">
+      <label for="search">Search:</label>
+      <input type="text" id="search" name="query" placeholder="e.g. red fox"><!-- input is a self-closing tag. type="text" is for a regular text field -->
+      <button type="submit">Search now</button>
+    </form>
+    
+
+    <h2>Login form example</h2>
+    <form method="post">
+      <div>
+        <label for="u">Username:</label>
+        <input type="text" id="u" name="user" placeholder="johndoe">
+      </div>
+      <div>
+        <label for="pw">Password:</label>
+        <input type="password" id="pw" name="pass" placeholder="******">
+      </div>
+      <button type="submit">Log in</button>
+    </form>
+
+    <h2>Random form example</h2>
+    <p>The following is just a form used to test out a few form fields.</p>
+    <form method="post">
+      <div>
+        <label for="household">Number of people in your household:</label>
+        <input type="number" id="household" name="household" value="1" min="1">
+      </div>
+      <div>
+        <label for="phone">Phone number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required>
+      </div>
+      <div>
+        <label for="fmt-number">Formatted number:</label>
+        <!-- In some cases, you want a "number" field to look like a text field but pull up the number pad in mobile devices. In that case (if it's not a phone number) you can use the inputmode attribute (set to "numeric") along with type="text". -->
+        <input type="text" inputmode="numeric" id="fmt-number" name="fmt-number" placeholder="1">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="john.doe@example.com">
+      </div>
+      <input type="hidden" name="my-hidden-field" value="Random value">
+      <div>
+        <input type="checkbox" id="subscribe" name="subscribe" value="subscribed" checked><!-- Use the checked attribute to select a checkbox OR radio button by default. -->
+        <label for="subscribe">Subscribe to our newsletter</label>
+      </div>
+      <fieldset>
+        <!-- A fieldset defines a group of related fields within a larger form. It contains a legend element which labels what the fieldset is for. -->
+        <legend>Select the newsletter topics you're interested in</legend>
+        <input type="checkbox" id="art" name="interests" value="art">
+        <label for="art">Art</label>
+        <input type="checkbox" id="wood" name="interests" value="wood">
+        <label for="wood">Woodworking</label>
+        <input type="checkbox" id="garden" name="interests" value="garden">
+        <label for="garden">Gardening</label>
+      </fieldset>
+      <fieldset>
+        <legend>Select your age group</legend>
+        <input type="radio" id="twenties" name="age" value="20s" checked>
+        <label for="twenties">20-29</label>
+        <input type="radio" id="thirties" name="age" value="30s">
+        <label for="thirties">30-39</label>
+        <input type="radio" id="fortyplus" name="age" value="40+">
+        <label for="fortyplus">40+</label>
+      </fieldset>
+      <div>
+        <label for="reason">Reason for enquiry:</label>
+        <select id="reason" name="reason">
+          <option disabled selected>--Choose a reason--</option><!-- this is the dummy option -->
+          <option value="sales">Sales enquiries</option>
+          <option value="legal">Legal enquiries</option>
+          <optgroup label="Other enquiries"><!-- Use an optgroup to define a group of options. You can nest optgroup in other optgroups depending on how far you want to organize your options. -->
+            <option value="media">Media enquiries</option>
+            <option value="general">General enquiries</option>
+          </optgroup>
+        </select>
+      </div>
+      <div>
+        <label for="message">Your message:</label>
+      </div>
+      <div>
+        <textarea id="message" name="msg" placeholder="Your message text here..." rows="8" cols="70"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+      <button type="reset">Clear form</button>
+      <button type="button">Random button</button><!-- type="button" is used for buttons where YOU have to write the script for what happens on click. -->
+    </form>
+  </body>
+</html>
